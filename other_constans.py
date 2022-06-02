@@ -1,12 +1,12 @@
-from constans_given import initial_x, initial_y
+from constans_given import initial_x, initial_y, g, m
 from functions_algorithms import uchyb, change_to_z, change_to_h
 # Można zmienić tylko wartości w ramkach
 ################################################################
 #TODO: Pamietac o ograniczeniach:
 # x +- 5,
 # y -3, -20
-goal_x = -2
-goal_y = -13
+goal_x = 3
+goal_y = -15
 ################################################################
 
 goal_h = change_to_h(goal_y)
@@ -20,6 +20,8 @@ current_velocity_x = 0
 current_velocity_y = 0
 current_acceleration_x = 0
 current_acceleration_y = 0
+wspolczynnik = 1
+ft = 1/2 * m * g * wspolczynnik
 
 
 

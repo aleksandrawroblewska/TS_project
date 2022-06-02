@@ -3,9 +3,9 @@ from functions_algorithms import pitagoras_przeciwprostokatna, change_to_x, chan
     uchyb, calculate_rope_difference, checking_if_moments_in_scope, plot_all_results, plot_path
 from other_constans import time, velocity_x, velocity_y, velocity, acceleration, uchyb_x, uchyb_y, results_x, \
     results_y, results_h, results_z, initial_h, initial_z, goal_h, goal_z, acceleration_x, acceleration_y, current_z, \
-    current_h, moments_1, moments_2, forces_1, forces_2, results_fi1, results_fi2
+    current_h, moments_1, moments_2, forces_1, forces_2, results_fi1, results_fi2, ft
 
-#Podawanie wartości x i y docelowych w other_constans.py
+#TODO: Podawanie wartości x i y docelowych w other_constans.py
 
 if __name__ == '__main__':
 
@@ -61,8 +61,8 @@ if __name__ == '__main__':
         force_2 = m * g * pitagoras_przeciwprostokatna(current_h, (16 - initial_z)) * current_z / (16 * current_h)
         force_1 = force_2 * ((16 - current_z)/pitagoras_przeciwprostokatna(current_h, (16 - initial_z)))/\
                   (current_h/(pitagoras_przeciwprostokatna(current_h, current_z)))
-        m1 = force_1 * r1
-        m2 = force_2 * r2
+        m1 = force_1 * r1 + ft * r1
+        m2 = force_2 * r2 + ft * r2
         checking_if_moments_in_scope(m1)
         checking_if_moments_in_scope(m2)
 
