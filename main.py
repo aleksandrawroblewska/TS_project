@@ -5,6 +5,8 @@ from other_constans import time, velocity_x, velocity_y, velocity, acceleration,
     results_y, results_h, results_z, initial_h, initial_z, goal_h, goal_z, acceleration_x, acceleration_y, current_z, \
     current_h, moments_1, moments_2, forces_1, forces_2, results_fi1, results_fi2
 
+#Podawanie wartości x i y docelowych w other_constans.py
+
 if __name__ == '__main__':
 
     #Calculating the rope differences
@@ -71,14 +73,11 @@ if __name__ == '__main__':
 
         #uchyb
         uchyb_x.append(uchyb(results_z[i], goal_z))
-        uchyb_y.append(uchyb(results_h[i], goal_h))
+        uchyb_y.append(-uchyb(results_h[i], goal_h))
 
         #katy obrotu
         results_fi1.append(fi1*dt/simulation_time*i)
         results_fi2.append(fi2*dt/simulation_time*i)
-
-    #TODO: zrobic to lepiej
-    uchyb_y[0] = uchyb_y[1]
 
     #transformation back to x, y axes
     for zs in results_z:
@@ -86,8 +85,8 @@ if __name__ == '__main__':
     for hs in results_h:
         results_y.append(change_to_y(hs))
 
+    #plot results
     plot_path(results_x, results_y)
-
     plot_all_results(time, results_x, results_y, velocity_x, velocity_y, acceleration_x, acceleration_y, uchyb_x,
                      uchyb_y, results_fi1, results_fi2, moments_1, moments_2)
 

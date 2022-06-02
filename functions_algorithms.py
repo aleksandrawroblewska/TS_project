@@ -1,39 +1,30 @@
 from cmath import sqrt
-
 from matplotlib.pyplot import subplots, show, plot, xlabel, ylabel
 from numpy import real
-
 
 def diffrenciate(previous_value, current_value, step):
     result = (current_value - previous_value) / step
     return result
 
-
 def integrate(previous_value, current_value, step):
     result = (current_value + previous_value) * step / 2
     return result
 
-
 def change_to_x(z, a=8):
     return (z - a)
-
 
 def change_to_y(h):
     return (-h)
 
-
 def change_to_z(x, a=8):
     return (x + a)
-
 
 def change_to_h(y):
     return (- y)
 
-
 def uchyb(obecna_wartosc, zadana_wartosc):
     result = obecna_wartosc - zadana_wartosc
     return result
-
 
 def pitagoras_przeciwprostokatna(wartosc_1, wartosc_2):
     return sqrt(wartosc_1 ** 2 + wartosc_2 ** 2)

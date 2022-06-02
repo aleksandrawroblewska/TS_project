@@ -1,11 +1,14 @@
 from constans_given import initial_x, initial_y
 from functions_algorithms import uchyb, change_to_z, change_to_h
-
+# Można zmienić tylko wartości w ramkach
+################################################################
 #TODO: Pamietac o ograniczeniach:
 # x +- 5,
 # y -3, -20
-goal_x = 7
-goal_y = -9
+goal_x = -2
+goal_y = -13
+################################################################
+
 goal_h = change_to_h(goal_y)
 goal_z = change_to_z(goal_x)
 
